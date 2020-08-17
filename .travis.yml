@@ -3,3 +3,6 @@ version: ~> 1.0
 
 script:
 - APPMAP=true bundle exec rspec spec
+
+after_script:
+- env DEBUG=true ruby ./upload-appmaps tmp/appmap/rspec
