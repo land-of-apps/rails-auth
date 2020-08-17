@@ -4,7 +4,9 @@ version: ~> 1.0
 script:
 - bundle exec rspec spec
 
-
+#
+# FROM ORIGINAL .TAVIS.YML
+#
 
 # language: ruby
 # sudo: false
