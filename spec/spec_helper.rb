@@ -3,6 +3,9 @@
 require "coveralls"
 Coveralls.wear!
 
+# APPMAP
+require "appmap/rspec"
+
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 require "rails/auth"
 require "rails/auth/rspec"
