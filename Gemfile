@@ -7,6 +7,7 @@ group :development do
 end
 
 group :development, :test do
+  gem "appmap"
   gem "activesupport", "~> 4"
   gem "certificate_authority", require: false
   gem "coveralls", require: false
