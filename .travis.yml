@@ -1,21 +1,11 @@
-language: ruby
-sudo: false
-branches:
-  only:
-    - master
+# Turn on validation, so we can use import:
+version: ~> 1.0
 
-before_install:
-  - gem install bundler
+import:
+- land-of-apps/land-of-apps:travis/ruby-imports.yml
 
-bundler_args: --without development
+script:
+- APPMAP=true bundle exec rspec spec
 
-rvm:
-  - 2.0.0
-  - 2.1.10
-  - 2.2.4
-  - 2.3.0
-matrix:
-  include:
-    - rvm: jruby-9.0.5.0
-      env: JRUBY_OPTS="--debug" # for simplecov
-  fast_finish: true
+after_script:
+- env DEBUG=true ruby ./upload-appmaps tmp/appmap/rspec/*
